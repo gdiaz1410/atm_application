@@ -1,42 +1,93 @@
 //Begin with the document ready function
+$(document).ready(function() {
 
-    //Checking account deposit function
+});
+//Checking account deposit function
+function depositChecking() {
 
-      //On click of the depositChecking button
+}
+//On click of the depositChecking button
+$('#depositChecking').on('click', function() {
+  //Get value from the amountChecking input field
+  var depositAmount = $('#amountChecking').val();
+  var depositAmountNum = parseInt(depositAmount);
+  //Take that value and add it to the existing value in the checkingBalance div
+  var currentAmount = $('#checkingBalance').text().replace('$', '');
+  var currentAmountNum = parseInt(currentAmount);
+  var newTotal = depositAmountNum + currentAmountNum;
 
-        //Get value from the amountChecking input field
+  $('#checkingBalance').text('$' + newTotal);
+  console.log(newTotal);
+})
 
-        //Take that value and add it to the existing value in the checkingBalance div
 
-    //Checking account withdrawl funtion
+//Checking account withdrawl function
+function withdrawChecking() {
 
-      //On click of the withdrawChecking button
+}
+//On click of the withdrawChecking button
+$('#withdrawChecking').on('click', function() {
+  //Get value from the amountChecking input field
+  var withdrawAmount = $('#amountChecking').val();
+  console.log(withdrawAmount);
+  var currentAmount = $('#checkingBalance').text().replace('$', '');
+  var currentAmountNum = parseInt(currentAmount)
+    // If that value is greater than the value in the account ignore that action
 
-        //Get value from the amountChecking input field
 
-        // If that value is greater than the value in the account ignore that action
-        // In other words if this would put the account into a negative balance do not allow it
+  if (withdrawAmount > currentAmountNum) {
+    alert('Wtf dude')
+  } else {
+    //Else subtract that value from the current amount in the checking account
+    // !!!Math for checking acct when going between deposit and withdrawl!!
+    alert('ball out')
+  }
+  // In other words if this would put the account into a negative balance do not allow it
+})
 
-        //Else subtract that value from the current amount in the checking account
 
-    //Savings account deposit function
+//Savings account deposit function
+function depositSavings() {
 
-      //On click of the depositSavings button
+}
+//On click of the depositSavings button
+$('#depositSavings').on('click', function() {
+  var savingsDeposit = $('#amountSavings').val();
+  var savingsDepositNum = parseInt(savingsDeposit);
+//Take that value and add it to the existing value in the savingsBalance div
+  var currentAmount = $('#savingsBalance').text().replace('$', '');
+  var currentAmountNum = parseInt(currentAmount);
+  var newTotal = savingsDeposit + savingsDepositNum;
 
-        //Get value from the amountSavings input field
+  $('#savingsBalance').text('$' + newTotal);
+  console.log(newTotal);
 
-        //Take that value and add it to the existing value in the savingsBalance div
+})
 
-    //Savings account withdraw funtion
+//Savings account withdraw funtion
+function withdrawSavings() {
 
-      //On click of the withdrawl button
+}
+//On click of the withdrawl button
+$('#withdrawSavings').on('click', function() {
+  //Get value from the amountSavings input field
+  var withdrawAmount = $('#amountSavings').val();
+  console.log(withdrawAmount);
+  var currentAmount = $('#savingsBalance').text().replace('$', '');
+  var currentAmountNum = parseInt(currentAmount)
 
-        //Get value from the amountSavings input field
+  if (withdrawAmount > currentAmountNum) {
+    alert('Wtf dude')
+  } else {
+    alert('ball out')
+  }
 
-         //If that value is greater than the value in the account ignore that action
-         //In other words if this would put the account into a negative balance do not allow it
+})
 
-         //Else subtract that value from the current amount in the savings account
+//If that value is greater than the value in the account ignore that action
+//In other words if this would put the account into a negative balance do not allow it
+
+//Else subtract that value from the current amount in the savings account
 
 // Bonus-- get the two accounts to work with each other and allow for overdraft protection
 
